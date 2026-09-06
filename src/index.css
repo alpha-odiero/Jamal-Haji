@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Adjust these variables to re-brand the whole site.
+--------------------------------------------------------------------------- */
+:root {
+  /* Core palette */
+  --color-ink: 220 12% 10%; /* near-black text */
+  --color-ink-soft: 220 8% 34%; /* body / secondary text */
+  --color-ink-faint: 220 7% 55%; /* muted text */
+  --color-canvas: 42 30% 97%; /* warm off-white background */
+  --color-canvas-alt: 42 25% 93%; /* subtle section variation */
+  --color-card: 42 40% 99%; /* white cards */
+  --color-line: 42 18% 88%; /* subtle borders */
+
+  /* One distinctive accent */
+  --color-accent: 22 82% 52%; /* warm amber/orange */
+
+  --color-focus: 22 82% 46%;
+}
+
+* {
+  border-color: hsl(var(--color-line));
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: hsl(var(--color-canvas));
+  color: hsl(var(--color-ink));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Body scroll lock when the mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+.display {
+  font-family: 'Poppins', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid hsl(var(--color-focus));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: hsl(var(--color-accent) / 0.25);
+}
+
+@layer components {
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--color-ink-soft));
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background-color: hsl(var(--color-accent));
+  }
+
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}

@@ -1,0 +1,25 @@
+import DesignImage from '../ui/DesignImage'
+
+interface ProjectGalleryProps {
+  images: (string | null)[]
+  title: string
+  className?: string
+}
+
+export default function ProjectGallery({ images, title, className = '' }: ProjectGalleryProps) {
+  return (
+    <div className={`grid gap-6 sm:grid-cols-2 ${className}`}>
+      {images.map((image, index) => (
+        <DesignImage
+          key={index}
+          src={image}
+          alt={`${title} — visual ${index + 1}`}
+          aspect={index === 0 ? 'aspect-[16/10] sm:col-span-2' : 'aspect-[4/3]'}
+          label={title}
+          gradientFrom={index % 2 === 0 ? '#e9e2d4' : '#d9d0bd'}
+          gradientTo={index % 2 === 0 ? '#d4c8b0' : '#c9bda3'}
+        />
+      ))}
+    </div>
+  )
+}
