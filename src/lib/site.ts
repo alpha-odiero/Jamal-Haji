@@ -7,6 +7,8 @@ export const NAV_LINKS = [
 ] as const
 
 export const site = {
+  // Deployed production URL (used for canonical, Open Graph and JSON-LD)
+  url: 'https://jamal-haji.vercel.app',
   // Personal brand shown across the site
   name: 'JAMAL HAJI',
   // Studio / brand used in the copyright line

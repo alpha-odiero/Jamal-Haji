@@ -14,8 +14,8 @@ const DEFAULT_DESCRIPTION =
 /**
  * Per-route SEO helper.
  * Updates the document title, meta description, canonical URL, Open Graph and
- * Twitter tags, plus robots directives. All URLs are derived from the live
- * origin, so they stay correct no matter where the site is hosted.
+ * Twitter tags, plus robots directives. Absolute URLs are built from the
+ * production site URL so search engines see one canonical domain.
  * Structured data (JSON-LD) is injected once per session.
  */
 export default function useSeo({
@@ -25,7 +25,7 @@ export default function useSeo({
   noindex = false,
 }: SeoProps) {
   useEffect(() => {
-    const url = window.location.origin + window.location.pathname
+    const url = site.url + window.location.pathname
     const desc = description ?? DEFAULT_DESCRIPTION
 
     document.title = title
@@ -62,11 +62,11 @@ function setMeta(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content)
 }
 
-/** Injects a JSON-LD graph (business + person) once, using the live origin. */
+/** Injects a JSON-LD graph (business + person) once, using the production URL. */
 function ensureSchema() {
   if (document.head.querySelector('script[data-seo-schema]')) return
 
-  const origin = window.location.origin
+  const origin = site.url
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
