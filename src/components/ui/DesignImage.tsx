@@ -25,8 +25,8 @@ export default function DesignImage({
   className = '',
   aspect = 'aspect-[4/3]',
   priority = false,
-  gradientFrom = '#e9e2d4',
-  gradientTo = '#d9cfbb',
+  gradientFrom = 'var(--placeholder-1)',
+  gradientTo = 'var(--placeholder-2)',
   label,
   children,
 }: DesignImageProps) {

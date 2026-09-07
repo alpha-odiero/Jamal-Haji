@@ -1,14 +1,18 @@
 import { NavLink } from 'react-router-dom'
 import { NAV_LINKS, site } from '../../lib/site'
 import Button from '../ui/Button'
+import ThemeToggle from '../ui/ThemeToggle'
+import type { Theme } from '../../hooks/useTheme'
 
 interface NavbarProps {
   scrolled: boolean
   onMenuToggle: () => void
   menuOpen: boolean
+  theme: Theme
+  onToggleTheme: () => void
 }
 
-export default function Navbar({ scrolled, onMenuToggle, menuOpen }: NavbarProps) {
+export default function Navbar({ scrolled, onMenuToggle, menuOpen, theme, onToggleTheme }: NavbarProps) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 border-b border-line bg-canvas/90 backdrop-blur-md transition-shadow duration-300 ${
@@ -49,35 +53,39 @@ export default function Navbar({ scrolled, onMenuToggle, menuOpen }: NavbarProps
           <Button to="/contact" className="px-5 py-2.5">
             Let&apos;s Work Together
           </Button>
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          type="button"
-          onClick={onMenuToggle}
-          className="lg:hidden p-1.5"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-        >
-          <span className="flex flex-col items-end gap-1.5">
-            <span
-              className={`h-0.5 bg-ink transition-all duration-300 ${
-                menuOpen ? 'w-5 translate-y-2 rotate-45' : 'w-6'
-              }`}
-            />
-            <span
-              className={`h-0.5 bg-ink transition-all duration-300 ${
-                menuOpen ? 'w-5 opacity-0' : 'w-5'
-              }`}
-            />
-            <span
-              className={`h-0.5 bg-ink transition-all duration-300 ${
-                menuOpen ? 'w-5 -translate-y-2 -rotate-45' : 'w-4'
-              }`}
-            />
-          </span>
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle className="lg:hidden" theme={theme} onToggle={onToggleTheme} />
+          <button
+            type="button"
+            onClick={onMenuToggle}
+            className="lg:hidden p-1.5"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="flex flex-col items-end gap-1.5">
+              <span
+                className={`h-0.5 bg-ink transition-all duration-300 ${
+                  menuOpen ? 'w-5 translate-y-2 rotate-45' : 'w-6'
+                }`}
+              />
+              <span
+                className={`h-0.5 bg-ink transition-all duration-300 ${
+                  menuOpen ? 'w-5 opacity-0' : 'w-5'
+                }`}
+              />
+              <span
+                className={`h-0.5 bg-ink transition-all duration-300 ${
+                  menuOpen ? 'w-5 -translate-y-2 -rotate-45' : 'w-4'
+                }`}
+              />
+            </span>
+          </button>
+        </div>
 
       </nav>
     </header>

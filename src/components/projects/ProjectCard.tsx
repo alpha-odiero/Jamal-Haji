@@ -33,8 +33,8 @@ export default function ProjectCard({ project, aspect, size = 'default' }: Proje
           src={project.coverImage}
           alt={`${project.title} — ${project.category}`}
           label={project.title}
-          gradientFrom="#e9e2d4"
-          gradientTo="#d4c8b0"
+          gradientFrom="var(--placeholder-1)"
+          gradientTo="var(--placeholder-3)"
           className="transition-transform duration-700 group-hover:scale-[1.03]"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

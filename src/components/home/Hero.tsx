@@ -56,8 +56,8 @@ function HeroVisual() {
   return (
     <div className="relative">
       {/* Background card deck */}
-      <div className="absolute -left-2 top-10 hidden h-40 w-40 -rotate-6 rounded-2xl bg-[#d9d0bd] sm:block" />
-      <div className="absolute -right-2 bottom-8 hidden h-40 w-40 rotate-6 rounded-2xl bg-[#e9e2d4] sm:block" />
+      <div className="absolute -left-2 top-10 hidden h-40 w-40 -rotate-6 rounded-2xl bg-[var(--hero-backdrop-a)] sm:block" />
+      <div className="absolute -right-2 bottom-8 hidden h-40 w-40 rotate-6 rounded-2xl bg-[var(--hero-backdrop-b)] sm:block" />
 
       <div className="relative overflow-hidden rounded-3xl border border-line shadow-lift">
         <DesignImage

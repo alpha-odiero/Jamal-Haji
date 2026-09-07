@@ -16,8 +16,8 @@ export default function ProjectGallery({ images, title, className = '' }: Projec
           alt={`${title} — visual ${index + 1}`}
           aspect={index === 0 ? 'aspect-[16/10] sm:col-span-2' : 'aspect-[4/3]'}
           label={title}
-          gradientFrom={index % 2 === 0 ? '#e9e2d4' : '#d9d0bd'}
-          gradientTo={index % 2 === 0 ? '#d4c8b0' : '#c9bda3'}
+          gradientFrom={index % 2 === 0 ? 'var(--placeholder-1)' : 'var(--placeholder-3)'}
+          gradientTo={index % 2 === 0 ? 'var(--placeholder-3)' : 'var(--placeholder-4)'}
         />
       ))}
     </div>

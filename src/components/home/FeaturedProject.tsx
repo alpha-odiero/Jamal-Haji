@@ -76,8 +76,8 @@ export default function FeaturedProject() {
               alt={`${featured.title} main brand identity`}
               aspect="aspect-[4/3] lg:col-span-2 lg:aspect-[16/9]"
               label="JG"
-              gradientFrom="#faf8f4"
-              gradientTo="#e9e2d4"
+              gradientFrom="var(--placeholder-1)"
+              gradientTo="var(--placeholder-3)"
             />
             <div className="flex flex-col gap-6">
               <DesignImage
@@ -85,16 +85,16 @@ export default function FeaturedProject() {
                 alt={`${featured.title} business card application`}
                 aspect="aspect-[16/10]"
                 label="Business Card"
-                gradientFrom="#d4c8b0"
-                gradientTo="#c9bda3"
+                gradientFrom="var(--placeholder-3)"
+                gradientTo="var(--placeholder-4)"
               />
               <DesignImage
                 src={featured.gallery[1]}
                 alt={`${featured.title} social media application`}
                 aspect="aspect-[16/10]"
                 label="Social Media"
-                gradientFrom="#e9e2d4"
-                gradientTo="#d4c8b0"
+                gradientFrom="var(--placeholder-1)"
+                gradientTo="var(--placeholder-3)"
               />
             </div>
           </div>

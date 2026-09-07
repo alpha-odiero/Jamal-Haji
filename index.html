@@ -7,6 +7,22 @@
     <meta name="theme-color" content="#faf8f4" />
     <link rel="canonical" href="https://jamal-haji.vercel.app/" />
 
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('jamal-theme')
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          var root = document.documentElement
+          if (dark) root.classList.add('dark')
+          root.style.colorScheme = dark ? 'dark' : 'light'
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', dark ? '#191513' : '#faf8f4')
+        } catch (e) {}
+      })()
+    </script>
+
     <title>Jamal Haji | Graphic & Creative Designer</title>
     <meta
       name="description"

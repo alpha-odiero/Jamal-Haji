@@ -3,13 +3,17 @@ import { NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { NAV_LINKS, site } from '../../lib/site'
 import WhatsAppIcon from '../ui/WhatsAppIcon'
+import ThemeToggle from '../ui/ThemeToggle'
+import type { Theme } from '../../hooks/useTheme'
 
 interface MobileMenuProps {
   open: boolean
   onClose: () => void
+  theme: Theme
+  onToggleTheme: () => void
 }
 
-export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+export default function MobileMenu({ open, onClose, theme, onToggleTheme }: MobileMenuProps) {
   // Prevent body scrolling while the menu is open.
   useEffect(() => {
     if (open) {
@@ -43,6 +47,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           className="fixed inset-0 top-16 z-30 bg-canvas/95 backdrop-blur-md lg:hidden"
         >
           <nav aria-label="Mobile navigation" className="flex h-full flex-col px-5 pb-8 pt-4 sm:px-8">
+            <div className="flex justify-end pb-2">
+              <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+            </div>
             <ul className="flex flex-col divide-y divide-line">
               {NAV_LINKS.map((link, i) => (
                 <motion.li
