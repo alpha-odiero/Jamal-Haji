@@ -24,7 +24,7 @@ export default function Navbar({ scrolled, onMenuToggle, menuOpen }: NavbarProps
           className="font-display text-sm font-bold tracking-[0.08em] text-ink"
           aria-label={`${site.name} — Home`}
         >
-          {site.name}
+          <span className="border-b border-accent pb-0.5">{site.name.split(' ')[0]}</span> {site.name.split(' ').slice(1).join(' ')}
         </NavLink>
 
         {/* Desktop nav */}
