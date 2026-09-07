@@ -43,7 +43,7 @@ export default function SelectedWork() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOnce}
-                className={`${layout} ${index % 3 === 1 ? 'lg:mt-16' : ''}`}
+                className={`h-full ${layout} ${index % 3 === 1 ? 'lg:mt-16' : ''}`}
               >
                 <ProjectCard project={project} size={size} />
               </motion.div>

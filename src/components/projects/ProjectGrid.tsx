@@ -38,7 +38,7 @@ export default function ProjectGrid({
       className={`grid gap-x-8 gap-y-10 sm:grid-cols-2 ${className}`}
     >
       {projects.map((project) => (
-        <motion.div key={project.id} variants={fadeUp}>
+        <motion.div key={project.id} variants={fadeUp} className="h-full">
           <ProjectCard project={project} size={size} />
           {renderFooter?.(project)}
         </motion.div>

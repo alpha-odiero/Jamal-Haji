@@ -23,22 +23,17 @@ export default function ProjectCard({ project, aspect, size = 'default' }: Proje
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className="group block"
+      className="group flex h-full flex-col"
       aria-label={`View project: ${project.title}`}
     >
-      <div
-        className={`relative w-full overflow-hidden rounded-2xl border border-line bg-card shadow-soft transition-shadow duration-500 group-hover:shadow-lift ${aspectClass}`}
-      >
-        <DesignImage
-          src={project.coverImage}
-          alt={`${project.title} — ${project.category}`}
-          label={project.title}
-          gradientFrom="var(--placeholder-1)"
-          gradientTo="var(--placeholder-3)"
-          className="transition-transform duration-700 group-hover:scale-[1.03]"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      </div>
+      <DesignImage
+        src={project.coverImage}
+        alt={`${project.title} — ${project.category}`}
+        label={project.title}
+        aspect={`grow ${aspectClass}`}
+        className="rounded-2xl border border-line bg-card shadow-soft transition-all duration-500 group-hover:shadow-lift group-hover:scale-[1.03]"
+      />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>
