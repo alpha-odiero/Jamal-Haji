@@ -30,7 +30,7 @@ export const SEO = {
 
 export const site = {
   // Deployed production URL (used for canonical, Open Graph and JSON-LD)
-  url: 'https://eugene-mulah.vercel.app',
+  url: 'https://jamal-haji.vercel.app',
   // Personal brand shown across the site
   name: 'EUGENE MULAH',
   // Studio / brand used in the copyright line
@@ -44,7 +44,7 @@ export const site = {
   whatsappHref: 'https://wa.me/254729313539',
   whatsappLabel: '0729313539',
   // Shared social share image (absolute, so OG/Twitter previews work anywhere)
-  ogImage: 'https://eugene-mulah.vercel.app/og-image.jpg',
+  ogImage: 'https://jamal-haji.vercel.app/og-image.jpg',
 }
 
 export const DEFAULT_DESCRIPTION = SEO.description

@@ -3,4 +3,4 @@ Allow: /
 
 # Public pages and assets are indexable.
 # Sitemap:
-Sitemap: https://eugene-mulah.vercel.app/sitemap.xml
+Sitemap: https://jamal-haji.vercel.app/sitemap.xml
