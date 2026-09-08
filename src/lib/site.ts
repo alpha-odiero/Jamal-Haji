@@ -34,7 +34,7 @@ export const site = {
   // Personal brand shown across the site
   name: 'EUGENE MULAH',
   // Studio / brand used in the copyright line
-  studio: 'EUGENE JAMAL',
+  studio: 'JAMAL GRAPHEX',
   role: 'Graphic Designer · Creative Designer',
   statement: 'Turning ideas into visual experiences.',
   phone: '0729313539',
