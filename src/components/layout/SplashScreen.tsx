@@ -7,7 +7,7 @@ interface SplashScreenProps {
   onDone: () => void
 }
 
-const nameLetters = site.name.split('')
+const nameLetters = site.studio.split('')
 
 export default function SplashScreen({ onDone }: SplashScreenProps) {
   useEffect(() => {
