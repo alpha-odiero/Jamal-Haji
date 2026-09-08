@@ -3,7 +3,7 @@ import { fadeUp, stagger } from '../../lib/motion'
 import Container from '../ui/Container'
 import Button from '../ui/Button'
 import DesignImage from '../ui/DesignImage'
-import heroImage from '../../assets/hero.png'
+import heroImage from '../../assets/eugene-creative-design-hero.png'
 
 export default function Hero() {
   return (
@@ -25,7 +25,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-4 max-w-lg text-base leading-relaxed text-ink-soft sm:text-lg"
             >
-              I&apos;m Jamal Haji, a graphic and creative designer focused on transforming
+              I&apos;m Eugene Mulah, a graphic and creative designer focused on transforming
               ideas into visual experiences that communicate, connect and leave an
               impression.
             </motion.p>
@@ -62,7 +62,7 @@ function HeroVisual() {
       <div className="relative overflow-hidden rounded-3xl border border-line shadow-lift">
         <DesignImage
           src={heroImage}
-          alt="Jamal Graphex — creative design work by Jamal Haji"
+          alt="Creative design work by Eugene Mulah, graphic and creative designer"
           aspect="aspect-[4/5] sm:aspect-square lg:aspect-[4/5]"
           priority
         />

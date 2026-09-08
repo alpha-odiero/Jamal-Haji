@@ -73,16 +73,16 @@ export default function FeaturedProject() {
           <div className="grid gap-6 p-8 lg:grid-cols-3 lg:p-12">
             <DesignImage
               src={featured.heroImage}
-              alt={`${featured.title} main brand identity`}
+              alt={`${featured.title} brand identity design by Eugene Mulah`}
               aspect="aspect-[4/3] lg:col-span-2 lg:aspect-[16/9]"
-              label="JG"
+              label="EG"
               gradientFrom="var(--placeholder-1)"
               gradientTo="var(--placeholder-3)"
             />
             <div className="flex flex-col gap-6">
               <DesignImage
                 src={featured.gallery[0]}
-                alt={`${featured.title} business card application`}
+                alt={`${featured.title} business card design by Eugene Mulah`}
                 aspect="aspect-[16/10]"
                 label="Business Card"
                 gradientFrom="var(--placeholder-3)"
@@ -90,7 +90,7 @@ export default function FeaturedProject() {
               />
               <DesignImage
                 src={featured.gallery[1]}
-                alt={`${featured.title} social media application`}
+                alt={`${featured.title} social media design by Eugene Mulah`}
                 aspect="aspect-[16/10]"
                 label="Social Media"
                 gradientFrom="var(--placeholder-1)"

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { site } from '../../lib/site'
-import jamalPhoto from '../../assets/jamal.jpeg'
+import eugenePhoto from '../../assets/eugene-portrait.jpeg'
 
 interface SplashScreenProps {
   onDone: () => void
@@ -42,7 +42,7 @@ export default function SplashScreen({ onDone }: SplashScreenProps) {
     >
       {/* Mobile full-bleed background */}
       <motion.img
-        src={jamalPhoto}
+        src={eugenePhoto}
         alt=""
         aria-hidden="true"
         initial={{ opacity: 0, scale: 1.04 }}
@@ -75,7 +75,7 @@ export default function SplashScreen({ onDone }: SplashScreenProps) {
           aria-hidden="true"
         />
         <motion.img
-          src={jamalPhoto}
+          src={eugenePhoto}
           alt={site.name}
           initial={{ opacity: 0, scale: 0.82, filter: 'blur(4px)' }}
           animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}

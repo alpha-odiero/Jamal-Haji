@@ -12,9 +12,9 @@ const filters = projectFilters as readonly string[]
 
 export default function Projects() {
   useSeo({
-    title: 'Jamal Haji | Selected Work',
+    title: 'Graphic Design Portfolio | Eugene Mulah',
     description:
-      'A collection of branding, graphic design and creative projects developed through different ideas, styles and visual directions.',
+      'Explore the portfolio of Eugene Mulah — branding, logo design, graphic design, social media, creative design and marketing projects developed across different ideas, styles and visual directions.',
   })
 
   const [searchParams, setSearchParams] = useSearchParams()
@@ -78,6 +78,7 @@ export default function Projects() {
       {/* Grid */}
       <section className="py-12 lg:py-16">
         <Container>
+          <h2 className="sr-only">Projects</h2>
           <ProjectGrid key={activeFilter} projects={filtered} />
         </Container>
       </section>

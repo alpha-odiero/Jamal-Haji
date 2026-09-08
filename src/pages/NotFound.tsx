@@ -7,8 +7,8 @@ import { fadeUp, stagger } from '../lib/motion'
 
 export default function NotFound() {
   useSeo({
-    title: 'Page Not Found | Jamal Graphex',
-    description: 'This page went off the canvas.',
+    title: 'Page Not Found | Eugene Mulah',
+    description: 'The page you are looking for does not exist or has been moved.',
     noindex: true,
   })
 

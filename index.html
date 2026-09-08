@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#faf8f4" />
-    <link rel="canonical" href="https://jamal-haji.vercel.app/" />
+    <meta name="author" content="Eugene Mulah" />
+    <meta name="description" content="Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://eugene-mulah.vercel.app/" />
+    <meta name="google-site-verification" content="i1jTxMqt3cmov8ki3oZM-jyA5e7aGHNY3iiHyPzi8dA" />
 
     <script>
       ;(function () {
         try {
-          var stored = localStorage.getItem('jamal-theme')
+          var stored = localStorage.getItem('eugene-theme')
           var dark =
             stored === 'dark' ||
             (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -23,41 +28,62 @@
       })()
     </script>
 
-    <title>Jamal Haji | Graphic & Creative Designer</title>
-    <meta
-      name="description"
-      content="Jamal Haji is a graphic and creative designer who transforms ideas into visually appealing brand identities, logos, graphics and creative experiences."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Jamal Haji" />
-    <meta
-      name="keywords"
-      content="Jamal Haji, graphic designer, creative designer, brand identity, logo design, social media design, marketing design, portfolio"
-    />
-    <meta name="google-site-verification" content="i1jTxMqt3cmov8ki3oZM-jyA5e7aGHNY3iiHyPzi8dA" />
-
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="JAMAL GRAPHEX" />
-    <meta property="og:title" content="Jamal Haji | Graphic & Creative Designer" />
-    <meta
-      property="og:description"
-      content="Jamal Haji is a graphic and creative designer who transforms ideas into visually appealing brand identities, logos, graphics and creative experiences."
-    />
+    <meta property="og:site_name" content="Eugene Mulah" />
+    <meta property="og:title" content="Eugene Mulah | Graphic & Creative Designer" />
+    <meta property="og:description" content="Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions." />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://jamal-haji.vercel.app/" />
-    <meta property="og:image" content="https://jamal-haji.vercel.app/og-image.jpg" />
+    <meta property="og:url" content="https://eugene-mulah.vercel.app/" />
+    <meta property="og:image" content="https://eugene-mulah.vercel.app/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Eugene Mulah — Graphic & Creative Designer" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Jamal Haji | Graphic & Creative Designer" />
-    <meta
-      name="twitter:description"
-      content="Jamal Haji is a graphic and creative designer who transforms ideas into visually appealing brand identities, logos, graphics and creative experiences."
-    />
-    <meta name="twitter:image" content="https://jamal-haji.vercel.app/og-image.jpg" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eugene Mulah | Graphic & Creative Designer" />
+    <meta name="twitter:description" content="Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions." />
+    <meta name="twitter:image" content="https://eugene-mulah.vercel.app/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Eugene Mulah — Graphic & Creative Designer" />
+
+    <!-- Structured data (site-level; the SPA hook keeps this in sync per route) -->
+    <script type="application/ld+json" data-jsonld="site-schema">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://eugene-mulah.vercel.app/#website",
+            "url": "https://eugene-mulah.vercel.app/",
+            "name": "Eugene Mulah",
+            "description": "Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://eugene-mulah.vercel.app/#person" }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://eugene-mulah.vercel.app/#business",
+            "name": "Eugene Graphex",
+            "alternateName": "EUGENE MULAH",
+            "description": "Turning ideas into visual experiences.",
+            "url": "https://eugene-mulah.vercel.app/",
+            "founder": { "@id": "https://eugene-mulah.vercel.app/#person" },
+            "telephone": "+254729313539",
+            "email": "genejones426@gmail.com"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://eugene-mulah.vercel.app/#person",
+            "name": "Eugene Mulah",
+            "jobTitle": "Graphic & Creative Designer",
+            "url": "https://eugene-mulah.vercel.app/",
+            "worksFor": { "@id": "https://eugene-mulah.vercel.app/#business" },
+            "knowsAbout": ["Brand Identity", "Logo Design", "Graphic Design", "Social Media Design", "Marketing Materials", "Creative Design"]
+          }
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

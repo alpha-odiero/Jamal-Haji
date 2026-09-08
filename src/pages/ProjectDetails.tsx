@@ -6,17 +6,56 @@ import Container from '../components/ui/Container'
 import DesignImage from '../components/ui/DesignImage'
 import ProjectGallery from '../components/projects/ProjectGallery'
 import { projects } from '../data/projects'
+import { site, SEO } from '../lib/site'
 import { fadeUp, stagger } from '../lib/motion'
 
 export default function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>()
   const project = projects.find((p) => p.slug === slug)
 
+  const projectSchema = project
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+              { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${site.url}/projects` },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: project.title,
+                item: `${site.url}/projects/${project.slug}`,
+              },
+            ],
+          },
+          {
+            '@type': 'CreativeWork',
+            name: project.title,
+            description: project.description,
+            genre: project.category,
+            url: `${site.url}/projects/${project.slug}`,
+            inLanguage: 'en',
+            creator: {
+              '@type': 'Person',
+              name: SEO.personName,
+              jobTitle: SEO.jobTitle,
+              url: site.url,
+            },
+          },
+        ],
+      }
+    : undefined
+
   useSeo({
     title: project
-      ? `${project.title} | Jamal Graphex`
-      : 'Project Not Found | Jamal Graphex',
-    description: project?.description,
+      ? `${project.title} — Portfolio Project | Eugene Mulah`
+      : 'Project Not Found | Eugene Mulah',
+    description: project
+      ? `${project.description} — a ${project.category.toLowerCase()} project by Eugene Mulah, ${project.role}.`
+      : 'The project you are looking for does not exist or has moved.',
+    schema: projectSchema,
   })
 
   if (!project) {
@@ -90,7 +129,7 @@ export default function ProjectDetails() {
           >
             <DesignImage
               src={project.heroImage}
-              alt={`${project.title} hero visual`}
+              alt={`${project.title} — ${project.category} project visual by Eugene Mulah`}
               aspect="aspect-[16/9]"
               priority
               label={project.title}

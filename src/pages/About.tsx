@@ -33,9 +33,9 @@ const values: { title: string; description: string; icon: LucideIcon }[] = [
 
 export default function About() {
   useSeo({
-    title: 'Jamal Haji | About the Designer',
+    title: 'About Eugene Mulah | Graphic & Creative Designer',
     description:
-      'Learn about Jamal Haji, a graphic and creative designer who turns ideas into visuals that communicate clearly and leave an impression.',
+      'Learn about Eugene Mulah, a graphic and creative designer who turns ideas into clear, memorable visuals — from brand identity and logo design to graphic and creative design.',
   })
 
   return (
@@ -45,7 +45,7 @@ export default function About() {
         <Container>
           <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="eyebrow">
-              About Jamal
+              About Eugene
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -54,7 +54,7 @@ export default function About() {
               A designer driven by ideas and visual expression.
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-              I&apos;m Jamal Haji, a graphic and creative designer who enjoys turning ideas
+              I&apos;m Eugene Mulah, a graphic and creative designer who enjoys turning ideas
               into visuals that communicate clearly and leave an impression.
             </motion.p>
           </motion.div>

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-const STORAGE_KEY = 'jamal-theme'
+const STORAGE_KEY = 'eugene-theme'
 const LIGHT_META = '#faf8f4'
 const DARK_META = '#191513'
 

@@ -9,9 +9,9 @@ import { fadeUp, stagger } from '../lib/motion'
 
 export default function Contact() {
   useSeo({
-    title: 'Jamal Haji | Let\'s Work Together',
+    title: 'Contact Eugene Mulah | Graphic & Creative Designer',
     description:
-      'Get in touch with Jamal Haji to start a brand, design or creative project. Tell me what you have in mind and let\'s take it from there.',
+      'Contact Eugene Mulah to start a brand, design or creative project. Reach him by phone, WhatsApp or email to discuss your idea.',
   })
 
   return (

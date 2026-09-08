@@ -1,45 +1,71 @@
 import { useEffect } from 'react'
-import { site } from '../lib/site'
+import { SEO, site, DEFAULT_DESCRIPTION } from '../lib/site'
+import { services } from '../data/services'
 
 interface SeoProps {
   title: string
   description?: string
-  ogType?: string
   noindex?: boolean
+  ogType?: string
+  /** Optional absolute preview image (defaults to the shared open-graph image). */
+  image?: string
+  /** Page-level JSON-LD (single object or array) injected for this route. */
+  schema?: object | object[]
 }
 
-const DEFAULT_DESCRIPTION =
-  'Jamal Haji is a graphic and creative designer who transforms ideas into visually appealing brand identities, logos, graphics and creative experiences.'
+const SITE_SCHEMA_KEY = 'site-schema'
+const PAGE_SCHEMA_KEY = 'page-schema'
 
 /**
- * Per-route SEO helper.
+ * Clean canonical path: strip any trailing slash (keep root "/").
+ */
+function canonicalPath(pathname: string): string {
+  if (pathname === '/' || !pathname) return '/'
+  return pathname.replace(/\/+$/, '')
+}
+
+/**
+ * Client-side SEO helper for the Vite SPA.
  * Updates the document title, meta description, canonical URL, Open Graph and
  * Twitter tags, plus robots directives. Absolute URLs are built from the
  * production site URL so search engines see one canonical domain.
- * Structured data (JSON-LD) is injected once per session.
+ * Site-level structured data (WebSite + ProfessionalService + Person) is
+ * injected once; page-level JSON-LD is refreshed on every route.
  */
 export default function useSeo({
   title,
   description,
-  ogType = 'website',
   noindex = false,
+  ogType = SEO.ogType,
+  image = site.ogImage,
+  schema,
 }: SeoProps) {
   useEffect(() => {
-    const url = site.url + window.location.pathname
     const desc = description ?? DEFAULT_DESCRIPTION
+    const url = site.url + canonicalPath(window.location.pathname)
 
     document.title = title
 
     setMeta('name', 'description', desc)
     setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
+
+    // Open Graph
     setMeta('property', 'og:title', title)
     setMeta('property', 'og:description', desc)
     setMeta('property', 'og:type', ogType)
     setMeta('property', 'og:url', url)
-    setMeta('name', 'twitter:card', 'summary')
+    setMeta('property', 'og:image', image)
+    setMeta('property', 'og:image:alt', SEO.personName)
+    setMeta('property', 'og:site_name', SEO.personName)
+    setMeta('property', 'og:locale', SEO.locale)
+
+    // Twitter / X
+    setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', title)
     setMeta('name', 'twitter:description', desc)
+    setMeta('name', 'twitter:image', image)
 
+    // Canonical (self-referencing, query strings can't exist in pathname)
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
     if (!canonical) {
       canonical = document.createElement('link')
@@ -48,8 +74,16 @@ export default function useSeo({
     }
     canonical.setAttribute('href', url)
 
-    ensureSchema()
-  }, [title, description, ogType, noindex])
+    ensureSiteSchema()
+    setPageSchema(schema)
+
+    return () => {
+      // Remove page-level schema when leaving the route.
+      document.head
+        .querySelectorAll(`script[data-jsonld="${PAGE_SCHEMA_KEY}"]`)
+        .forEach((el) => el.remove())
+    }
+  }, [title, description, noindex, ogType, image, schema])
 }
 
 function setMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -62,14 +96,34 @@ function setMeta(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content)
 }
 
-/** Injects a JSON-LD graph (business + person) once, using the production URL. */
-function ensureSchema() {
-  if (document.head.querySelector('script[data-seo-schema]')) return
+function upsertScript(id: string, json: object) {
+  document.head.querySelectorAll(`script[data-jsonld="${id}"]`).forEach((el) => el.remove())
+  const el = document.createElement('script')
+  el.type = 'application/ld+json'
+  el.setAttribute('data-jsonld', id)
+  el.textContent = JSON.stringify(json)
+  document.head.appendChild(el)
+}
+
+/** Site-level structured data (WebSite + ProfessionalService + Person). */
+function ensureSiteSchema() {
+  if (document.head.querySelector(`script[data-jsonld="${SITE_SCHEMA_KEY}"]`)) return
 
   const origin = site.url
-  const schema = {
+  const knowsAbout = services.map((s) => s.title)
+
+  upsertScript(SITE_SCHEMA_KEY, {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${origin}/#website`,
+        url: origin,
+        name: SEO.personName,
+        description: DEFAULT_DESCRIPTION,
+        inLanguage: 'en',
+        publisher: { '@id': `${origin}/#person` },
+      },
       {
         '@type': 'ProfessionalService',
         '@id': `${origin}/#business`,
@@ -77,33 +131,30 @@ function ensureSchema() {
         alternateName: site.name,
         description: site.statement,
         url: origin,
-        founder: { '@type': 'Person', name: 'Jamal Haji' },
-        telephone: '+254729313539',
+        founder: { '@id': `${origin}/#person` },
+        telephone: SEO.telephone,
         email: site.email,
-        priceRange: '$$',
       },
       {
         '@type': 'Person',
         '@id': `${origin}/#person`,
-        name: 'Jamal Haji',
+        name: SEO.personName,
+        jobTitle: SEO.jobTitle,
         url: origin,
-        jobTitle: 'Graphic & Creative Designer',
         worksFor: { '@id': `${origin}/#business` },
-        knowsAbout: [
-          'Brand Identity',
-          'Logo Design',
-          'Graphic Design',
-          'Social Media Design',
-          'Marketing Materials',
-          'Creative Design',
-        ],
+        knowsAbout,
       },
     ],
-  }
+  })
+}
 
-  const el = document.createElement('script')
-  el.type = 'application/ld+json'
-  el.setAttribute('data-seo-schema', 'true')
-  el.textContent = JSON.stringify(schema)
-  document.head.appendChild(el)
+/** Injects the current route's JSON-LD (replacing the previous route's). */
+function setPageSchema(schema?: object | object[]) {
+  if (!schema) {
+    document.head
+      .querySelectorAll(`script[data-jsonld="${PAGE_SCHEMA_KEY}"]`)
+      .forEach((el) => el.remove())
+    return
+  }
+  upsertScript(PAGE_SCHEMA_KEY, schema)
 }

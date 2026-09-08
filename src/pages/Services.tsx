@@ -4,14 +4,39 @@ import Container from '../components/ui/Container'
 import Button from '../components/ui/Button'
 import ServiceCard from '../components/ui/ServiceCard'
 import { services } from '../data/services'
+import { site } from '../lib/site'
 import { serviceVisuals } from '../lib/serviceVisuals'
 import { fadeUp, stagger, viewportOnce } from '../lib/motion'
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: services.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: service.title,
+      description: service.description,
+      serviceType: service.title,
+      offers: {
+        '@type': 'Offer',
+        provider: {
+          '@type': 'ProfessionalService',
+          name: site.studio,
+          url: site.url,
+        },
+      },
+    },
+  })),
+}
+
 export default function Services() {
   useSeo({
-    title: 'Jamal Haji | Design Services',
+    title: 'Graphic Design Services | Eugene Mulah',
     description:
-      'Brand identity, logo design, graphic design, social media design, marketing materials and creative design — tailored to your idea and audience.',
+      'Brand identity, logo design, graphic design, social media design, marketing materials and creative design services by Eugene Mulah — tailored to your idea and audience.',
+    schema: serviceSchema,
   })
 
   return (
@@ -41,6 +66,7 @@ export default function Services() {
       {/* Services list */}
       <section className="py-12 lg:py-24">
         <Container>
+          <h2 className="sr-only">Design Services</h2>
           <motion.div
             variants={stagger}
             initial="hidden"

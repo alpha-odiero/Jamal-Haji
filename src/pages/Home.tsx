@@ -11,9 +11,9 @@ import ContactCTA from '../components/home/ContactCTA'
 
 export default function Home() {
   useSeo({
-    title: 'Jamal Haji | Graphic & Creative Designer',
+    title: 'Eugene Mulah | Graphic & Creative Designer',
     description:
-      'Jamal Haji is a graphic and creative designer who transforms ideas into visually appealing brand identities, graphics and creative experiences.',
+      'Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions. Explore his portfolio of visual work.',
   })
 
   return (

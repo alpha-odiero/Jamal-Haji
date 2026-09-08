@@ -1,0 +1,19 @@
+{
+  "name": "Eugene Mulah — Graphic & Creative Designer",
+  "short_name": "Eugene Mulah",
+  "description": "Portfolio of Eugene Mulah, a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf8f4",
+  "theme_color": "#faf8f4",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

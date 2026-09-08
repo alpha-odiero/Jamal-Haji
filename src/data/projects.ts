@@ -1,21 +1,21 @@
-import jamalBrand from '../assets/jamal brand.png'
-import jamalCard from '../assets/jamal bussiness card.png'
-import jamalSocial from '../assets/jamal social media.png'
-import brandIdentity from '../assets/brand identity.jpg'
-import logoDesign from '../assets/logo design.jpg'
-import graphicsChurch from '../assets/graphics church.jpg'
-import graphics from '../assets/graphics.jpg'
-import church from '../assets/church.jpg'
-import socialMedia from '../assets/social media.jpg'
-import socialMediaExtra from '../assets/social media..jpg'
-import socialPoster from '../assets/social poster.jpg'
-import creative from '../assets/creative.jpg'
-import creative1 from '../assets/creative1.jpg'
-import product from '../assets/product.jpg'
-import earphones from '../assets/earphones.jpg'
-import marketing from '../assets/marketing.jpg'
-import marketing1 from '../assets/marketing1.jpg'
-import run from '../assets/run.jpg'
+import eugeneBrand from '../assets/eugene-brand-identity.png'
+import eugeneCard from '../assets/eugene-business-card.png'
+import eugeneSocial from '../assets/eugene-social-media.png'
+import brandIdentity from '../assets/brand-identity-project.jpg'
+import logoDesign from '../assets/logo-design-project.jpg'
+import graphicsChurch from '../assets/church-graphic-design.jpg'
+import graphics from '../assets/church-poster-series.jpg'
+import church from '../assets/church-event-poster.jpg'
+import socialMedia from '../assets/social-media-design.jpg'
+import socialMediaExtra from '../assets/social-media-collection.jpg'
+import socialPoster from '../assets/social-media-poster.jpg'
+import creative from '../assets/creative-design-project.jpg'
+import creative1 from '../assets/creative-visual-project.jpg'
+import product from '../assets/product-visual-project.jpg'
+import earphones from '../assets/earphones-advert-project.jpg'
+import marketing from '../assets/marketing-materials-project.jpg'
+import marketing1 from '../assets/marketing-campaign-project.jpg'
+import run from '../assets/campaign-artwork-project.jpg'
 
 export interface Project {
   id: number
@@ -55,22 +55,22 @@ export const projectFilters = [
 export const projects: Project[] = [
   {
     id: 1,
-    slug: 'jamal-graphex',
-    title: 'Jamal Graphex',
+    slug: 'eugene-graphex',
+    title: 'Eugene Graphex',
     category: 'Brand Identity',
     year: '2026',
     description:
       'A visual identity built around creativity, personality and visual expression.',
     featured: true,
-    coverImage: jamalBrand,
-    heroImage: jamalBrand,
-    gallery: [jamalBrand, jamalCard, jamalSocial],
+    coverImage: eugeneBrand,
+    heroImage: eugeneBrand,
+    gallery: [eugeneBrand, eugeneCard, eugeneSocial],
     role: 'Graphic & Creative Designer',
     tools: ['Brand Strategy', 'Logo Design', 'Typography', 'Color Systems'],
     overview:
-      'Jamal Graphex is a personal creative brand built around a vision of turning ideas into visuals that people remember. The identity brings together expressive typography, a controlled color palette and a strong, memorable mark that reflects a thoughtful, human approach to design.',
+      'Eugene Graphex is a personal creative brand built around a vision of turning ideas into visuals that people remember. The identity brings together expressive typography, a controlled color palette and a strong, memorable mark that reflects a thoughtful, human approach to design.',
     creativeDirection:
-      'The identity is built around the letter mark J.G., combining clean geometric structure with a warm, human accent. The visual language leans on editorial typography, generous whitespace and a single distinctive accent color.',
+      'The identity is built around the letter mark E.G., combining clean geometric structure with a warm, human accent. The visual language leans on editorial typography, generous whitespace and a single distinctive accent color.',
     concept:
       'The concept centers on the studio as a space where ideas find their visual identity — a mark that is both simple and expressive enough to carry brand identity, posters and digital work.',
     visualDirection:

@@ -65,6 +65,8 @@ export default function DesignImage({
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'auto'}
           onError={handleError}
           className="absolute inset-0 h-full w-full object-cover"
         />
