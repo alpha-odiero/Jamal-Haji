@@ -55,8 +55,8 @@ export const projectFilters = [
 export const projects: Project[] = [
   {
     id: 1,
-    slug: 'eugene-graphex',
-    title: 'Eugene Graphex',
+    slug: 'eugene-jamal',
+    title: 'Eugene Jamal',
     category: 'Brand Identity',
     year: '2026',
     description:
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     role: 'Graphic & Creative Designer',
     tools: ['Brand Strategy', 'Logo Design', 'Typography', 'Color Systems'],
     overview:
-      'Eugene Graphex is a personal creative brand built around a vision of turning ideas into visuals that people remember. The identity brings together expressive typography, a controlled color palette and a strong, memorable mark that reflects a thoughtful, human approach to design.',
+      'Eugene Jamal is a personal creative brand built around a vision of turning ideas into visuals that people remember. The identity brings together expressive typography, a controlled color palette and a strong, memorable mark that reflects a thoughtful, human approach to design.',
     creativeDirection:
       'The identity is built around the letter mark E.G., combining clean geometric structure with a warm, human accent. The visual language leans on editorial typography, generous whitespace and a single distinctive accent color.',
     concept:
