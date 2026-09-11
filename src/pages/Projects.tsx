@@ -12,9 +12,9 @@ const filters = projectFilters as readonly string[]
 
 export default function Projects() {
   useSeo({
-    title: 'Graphic Design Portfolio | Eugene Mulah',
+    title: 'Graphic Design Portfolio | Eugene John Mulah',
     description:
-      'Explore the portfolio of Eugene Mulah — branding, logo design, graphic design, social media, creative design and marketing projects developed across different ideas, styles and visual directions.',
+      'Explore the portfolio of Eugene John Mulah — branding, logo design, graphic design, social media, creative design and marketing projects developed across different ideas, styles and visual directions.',
   })
 
   const [searchParams, setSearchParams] = useSearchParams()

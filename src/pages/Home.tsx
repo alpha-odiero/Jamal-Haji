@@ -11,9 +11,9 @@ import ContactCTA from '../components/home/ContactCTA'
 
 export default function Home() {
   useSeo({
-    title: 'Eugene Mulah | Graphic & Creative Designer',
+    title: 'Eugene John Mulah | Graphic & Creative Designer',
     description:
-      'Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions. Explore his portfolio of visual work.',
+      'Eugene John Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions. Explore his portfolio of visual work.',
   })
 
   return (

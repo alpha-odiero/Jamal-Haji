@@ -7,6 +7,7 @@ import SectionHeading from '../components/ui/SectionHeading'
 import Button from '../components/ui/Button'
 import Skills from '../components/home/Skills'
 import { fadeUp, stagger, viewportOnce } from '../lib/motion'
+import eugineImage from '../assets/eugine.jpeg'
 
 const values: { title: string; description: string; icon: LucideIcon }[] = [
   {
@@ -43,21 +44,39 @@ export default function About() {
       {/* 01 — Hero */}
       <section className="pt-24 lg:pt-40">
         <Container>
-          <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
-            <motion.p variants={fadeUp} className="eyebrow">
-              About Eugene
-            </motion.p>
-            <motion.h1
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
+              <motion.p variants={fadeUp} className="eyebrow">
+                About Eugene
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="mt-4 font-display text-3xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl"
+              >
+                A designer driven by ideas and visual expression.
+              </motion.h1>
+              <motion.p variants={fadeUp} className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
+                I&apos;m Eugene John Mulah, a graphic and creative designer who enjoys turning ideas
+                into visuals that communicate clearly and leave an impression.
+              </motion.p>
+            </motion.div>
+
+            <motion.div
               variants={fadeUp}
-              className="mt-4 font-display text-3xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl"
+              initial="hidden"
+              animate="visible"
+              className="relative mx-auto w-full max-w-md lg:max-w-lg"
             >
-              A designer driven by ideas and visual expression.
-            </motion.h1>
-            <motion.p variants={fadeUp} className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-              I&apos;m Eugene John Mulah, a graphic and creative designer who enjoys turning ideas
-              into visuals that communicate clearly and leave an impression.
-            </motion.p>
-          </motion.div>
+              <div className="overflow-hidden rounded-3xl border border-line shadow-lift">
+                <img
+                  src={eugineImage}
+                  alt="Portrait of Eugene John Mulah"
+                  loading="eager"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
         </Container>
       </section>
 

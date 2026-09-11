@@ -50,10 +50,10 @@ export default function ProjectDetails() {
 
   useSeo({
     title: project
-      ? `${project.title} — Portfolio Project | Eugene Mulah`
-      : 'Project Not Found | Eugene Mulah',
+      ? `${project.title} — Portfolio Project | Eugene John Mulah`
+      : 'Project Not Found | Eugene John Mulah',
     description: project
-      ? `${project.description} — a ${project.category.toLowerCase()} project by Eugene Mulah, ${project.role}.`
+      ? `${project.description} — a ${project.category.toLowerCase()} project by Eugene John Mulah, ${project.role}.`
       : 'The project you are looking for does not exist or has moved.',
     schema: projectSchema,
   })
@@ -129,7 +129,7 @@ export default function ProjectDetails() {
           >
             <DesignImage
               src={project.heroImage}
-              alt={`${project.title} — ${project.category} project visual by Eugene Mulah`}
+              alt={`${project.title} — ${project.category} project visual by Eugene John Mulah`}
               aspect="aspect-[16/9]"
               priority
               label={project.title}

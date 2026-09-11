@@ -13,12 +13,12 @@ export const NAV_LINKS = [
  */
 export const SEO = {
   // Person-level identity (used in titles and structured data)
-  personName: 'Eugene Mulah',
+  personName: 'Eugene John Mulah',
   jobTitle: 'Graphic & Creative Designer',
   // Homepage defaults
-  title: 'Eugene Mulah | Graphic & Creative Designer',
+  title: 'Eugene John Mulah | Graphic & Creative Designer',
   description:
-    'Eugene Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions.',
+    'Eugene John Mulah is a graphic and creative designer specializing in brand identity, logo design, graphic design, social media design and creative design solutions.',
   // Social / metadata defaults
   locale: 'en_US',
   themeColorLight: '#faf8f4',
@@ -32,7 +32,7 @@ export const site = {
   // Deployed production URL (used for canonical, Open Graph and JSON-LD)
   url: 'https://jamal-haji.vercel.app',
   // Personal brand shown across the site
-  name: 'EUGENE MULAH',
+  name: 'EUGENE JOHN MULAH',
   // Studio / brand used in the copyright line
   studio: 'JAMAL GRAPHEX',
   role: 'Graphic Designer · Creative Designer',

@@ -22,7 +22,7 @@ export default function AboutPreview() {
             <div className="absolute -bottom-4 -right-4 hidden h-full w-full rounded-2xl bg-accent/10 sm:block" />
             <DesignImage
               src={creative}
-              alt="Creative design project by graphic and creative designer Eugene Mulah"
+              alt="Creative design project by graphic and creative designer Eugene John Mulah"
               aspect="aspect-[4/5]"
             />
           </motion.div>
@@ -34,7 +34,7 @@ export default function AboutPreview() {
             </motion.div>
             <motion.div variants={fadeUp} className="mt-5 space-y-4 text-base leading-relaxed text-ink-soft">
               <p>
-                I&apos;m Eugene Mulah, a graphic and creative designer passionate about
+                I&apos;m Eugene John Mulah, a graphic and creative designer passionate about
                 turning ideas into visual experiences.
               </p>
               <p>

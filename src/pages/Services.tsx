@@ -33,9 +33,9 @@ const serviceSchema = {
 
 export default function Services() {
   useSeo({
-    title: 'Graphic Design Services | Eugene Mulah',
+    title: 'Graphic Design Services | Eugene John Mulah',
     description:
-      'Brand identity, logo design, graphic design, social media design, marketing materials and creative design services by Eugene Mulah — tailored to your idea and audience.',
+      'Brand identity, logo design, graphic design, social media design, marketing materials and creative design services by Eugene John Mulah — tailored to your idea and audience.',
     schema: serviceSchema,
   })
 
