@@ -43,6 +43,12 @@ export const site = {
   emailHref: 'mailto:genejones426@gmail.com',
   whatsappHref: 'https://wa.me/254729313539',
   whatsappLabel: '0729313539',
+  // Social profiles by platform (icons from SocialLinks component)
+  socials: [
+    { platform: 'facebook', label: 'gene jones', url: 'https://facebook.com/genejones' },
+    { platform: 'tiktok', label: '@jamalhaji', url: 'https://tiktok.com/@jamalhaji' },
+    { platform: 'instagram', label: '@Lex_jones016', url: 'https://instagram.com/Lex_jones016' },
+  ] as const,
   // Shared social share image (absolute, so OG/Twitter previews work anywhere)
   ogImage: 'https://jamal-haji.vercel.app/og-image.jpg',
 }

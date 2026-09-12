@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { NAV_LINKS, site } from '../../lib/site'
 import Container from '../ui/Container'
+import SocialLinks from '../ui/SocialLinks'
 import WhatsAppIcon from '../ui/WhatsAppIcon'
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-canvas-alt">
       <Container className="py-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div className="max-w-sm">
             <Link to="/" className="font-display text-lg font-bold tracking-[0.08em] text-ink">
@@ -77,6 +78,12 @@ export default function Footer() {
             >
               Start a project <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </a>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h2 className="eyebrow mb-4">Social</h2>
+            <SocialLinks className="space-y-3" />
           </div>
         </div>
 
