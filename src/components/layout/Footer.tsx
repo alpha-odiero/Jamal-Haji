@@ -83,7 +83,7 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h2 className="eyebrow mb-4">Social</h2>
-            <SocialLinks className="space-y-3" />
+            <SocialLinks />
           </div>
         </div>
 

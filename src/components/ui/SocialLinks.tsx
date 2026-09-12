@@ -37,7 +37,7 @@ const ICONS = {
 
 export default function SocialLinks({ className = '' }: { className?: string }) {
   return (
-    <ul className={className}>
+    <ul className={`flex flex-wrap gap-3 ${className}`}>
       {site.socials.map((social) => {
         const Icon = ICONS[social.platform]
         return (
@@ -46,10 +46,11 @@ export default function SocialLinks({ className = '' }: { className?: string }) 
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 font-medium text-ink transition-colors hover:text-accent"
+              aria-label={social.platform}
+              title={social.platform}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-card text-ink transition-colors hover:border-accent hover:text-accent"
             >
-              <Icon className="h-4 w-4 shrink-0 text-ink-soft" />
-              <span className="link-underline text-sm">{social.label}</span>
+              <Icon className="h-5 w-5" />
             </a>
           </li>
         )
